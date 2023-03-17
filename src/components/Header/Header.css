@@ -1,0 +1,13 @@
+
+.dark_mode_btn{
+ position: absolute;
+ right: 0;
+ top: 20px;
+}
+.logo_icon{
+    width: 50px;
+    height: 50px;
+}
+.inshorts-header{
+    color: black;
+}

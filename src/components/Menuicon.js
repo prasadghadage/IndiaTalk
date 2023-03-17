@@ -24,11 +24,12 @@ const useStyles = makeStyles({
   },
 });
 
-export default function TemporaryDrawer({ setcategory }) {
+export default function TemporaryDrawer({getData,setCategory }) {
   const classes = useStyles();
   const [state, setState] = React.useState({
     left: false,
   });
+  
 
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
 
@@ -71,7 +72,9 @@ export default function TemporaryDrawer({ setcategory }) {
             button
             key={text}
             onClick={() => {
-              setcategory(text);
+              console.log(text);
+              //setCategory(text);
+              setCategory(text);
             }}
             style={{
               textTransform: "capitalize",

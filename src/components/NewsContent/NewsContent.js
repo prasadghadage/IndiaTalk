@@ -3,47 +3,19 @@ import React from "react";
 const NewsContent = ({ newsArray }) => {
   return (
     <div className="app-content">
-      <div className="download-text">
-        <p>
-          For the best experience use{" "}
-          <span style={{ fontWeight: "bold" }}>inshorts</span> app on your
-          smartphone.
-        </p>
-        <a
-          href="https://itunes.apple.com/us/app/news-in-shorts/id892146527"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img
-            src="https://assets.inshorts.com/website_assets/images/appstore.png"
-            height="80%"
-            alt=""
-          />
-        </a>
-        <a
-          href="https://play.google.com/store/apps/details?id=com.nis.app&referrer=utm_source%3DNews%2520In%2520Shorts%2520Website"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img
-            style={{ marginLeft: "2rem" }}
-            src="https://assets.inshorts.com/website_assets/images/playstore.png"
-            height="80%"
-            alt=""
-          />
-        </a>
-      </div>
+      {}
       {newsArray
-        .filter((item, newsItem) => newsItem < 15)
+       // .filter((item, newsItem) => newsItem < 15)
         .map((props) => {
           const {
             author,
             title,
-            publishedAt,
-            description,
-            urlToImage,
+            date,
+            content,
+            imageUrl,
             url,
-            source: { name },
+            readMoreUrl
+           // source: { name },
           } = props;
 
           return (
@@ -51,8 +23,8 @@ const NewsContent = ({ newsArray }) => {
               <img
                 className="newsImage"
                 src={
-                  urlToImage
-                    ? urlToImage
+                  imageUrl
+                    ? imageUrl
                     : "https://www.unityhighschool.org/wp-content/uploads/2014/08/default-placeholder.png"
                 }
                 alt="News"
@@ -63,28 +35,29 @@ const NewsContent = ({ newsArray }) => {
                   {title}
                   <br />
                   <span className="author">
-                    <a href={url} target="_blank" rel="noreferrer">
-                      <b>short</b>{" "}
+                    <a style={{color:'black'}} href={url} target="_blank" rel="noreferrer">
+                      <b>News</b>{" "}
                     </a>
-                    <span className="muted">
+                    <span style={{color:'black'}} className="muted" >
                       by {author ? author : "unknown"} on{" "}
-                      <span className="publishedAt">{publishedAt}</span>
+                      <span className="publishedAt">{date}</span>
                     </span>
                   </span>
                   <div className="lowerNewsText">
                     <div className="description">
-                      <p>{description}</p>
+                      <p style={{color:'black'}}>{content}</p>
                     </div>
                   </div>
                 </span>
                 <div>
                   <span className="readmore">
                     {" "}
-                    <a href={url} target="_blank" rel="noreferrer">
-                      read more at{" "}
+                    <a href={readMoreUrl} style={{color:'black'}} target="_blank" rel="noreferrer">
+                      CLick to Read More...{" "} 
+
                       <span style={{ color: "black" }}>
                         {" "}
-                        <b>{name}</b>{" "}
+                        <b></b>{" "}
                       </span>{" "}
                     </a>
                   </span>
